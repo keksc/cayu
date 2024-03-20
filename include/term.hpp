@@ -7,6 +7,7 @@ namespace term {
   void setRaw(bool enabled);
   void setAltBuf(bool enabled);
   namespace cursor {
+    std::pair<int, int> getPos();
     void setPos(int x=1, int y=1);
     void save();
     void restore();
@@ -35,6 +36,16 @@ namespace term {
   namespace graphic {
     namespace bg {
       void setCol(int r, int g, int b);
+      void reset();
+    }
+    namespace fg {
+      void setCol(int r, int g, int b);
+      void reset();
+    }
+    namespace intensity {
+      void bold();
+      void faint();
+      void reset();
     }
   }
 }

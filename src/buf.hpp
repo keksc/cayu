@@ -1,10 +1,11 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 class Buf {
   std::string m_filename;
-  std::string m_content;
+  std::vector<std::string> m_content;
 public:
   Buf(std::string filename="");
   void flush();
@@ -12,4 +13,5 @@ public:
   void read();
   void write();
   std::string getFilename() const;
+  std::vector<std::string> &getContent();
 };
